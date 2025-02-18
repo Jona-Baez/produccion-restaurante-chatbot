@@ -6,5 +6,8 @@ export const config = {
     jwtToken: process.env.jwtToken,
     numberId: process.env.numberId,
     verifyToken: process.env.verifyToken,
-    version: "v20.0"
+    version: "v20.0",
+    //OpenAI
+    Model: process.env.Nodel,
+    ApiKey: process.env.ApiKey
 };
