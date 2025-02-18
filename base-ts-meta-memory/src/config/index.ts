@@ -8,6 +8,6 @@ export const config = {
     verifyToken: process.env.verifyToken,
     version: "v20.0",
     //OpenAI
-    Model: process.env.Nodel,
+    Model: process.env.Model,
     ApiKey: process.env.ApiKey
 };

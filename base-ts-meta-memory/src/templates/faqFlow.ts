@@ -4,12 +4,12 @@ import { config } from "../config";
 import path from "path";
 import fs, { stat } from "fs";
 
-const pathPromt = path.join(
+const pathPrompt = path.join(
     process.cwd(),
     "assets/Prompts",
     "prompt_OpenAI.txt"
 );
-const promt = fs.readFileSync(pathPromt, "utf8");
+const prompt = fs.readFileSync(pathPrompt, "utf8");
 
 
 export const faqFlow = addKeyword(EVENTS.ACTION)
@@ -17,11 +17,11 @@ export const faqFlow = addKeyword(EVENTS.ACTION)
         async (ctx, { state, endFlow, gotoFlow}) => {
             try {
                 const AI = new aiServices(config.ApiKey);
-                const response = await AI.chat(promt, [{ role: "user", content: ctx.body }])
+                const response = await AI.chat(prompt, [{ role: "user", content: ctx.body }])
                 return endFlow(response);
             } catch (error) {
                 console.log ("Error en la llamada GPT", error);
-                return endFlow("Por favor, intenat de nuevo");
+                return endFlow("Por favor, intentar de nuevo");
             }
         }
     );
