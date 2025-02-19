@@ -7,7 +7,7 @@ import fs, { stat } from "fs";
 const pathPrompt = path.join(
     process.cwd(),
     "assets/Prompts",
-    "prompt_OpenAI.txt"
+    "prompt_OpenAi.txt"
 );
 const prompt = fs.readFileSync(pathPrompt, "utf8");
 

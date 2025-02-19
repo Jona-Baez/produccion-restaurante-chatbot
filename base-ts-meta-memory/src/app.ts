@@ -1,6 +1,6 @@
 import { createBot } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
-import {provider } from "./provider";
+import { provider } from "./provider";
 import { config } from './config';
 import templates from './templates';
 

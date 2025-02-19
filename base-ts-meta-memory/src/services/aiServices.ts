@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { config } from "~/config";
+import { config } from "../config";
 
 class aiServices {
     private static apiKey: string;
@@ -19,13 +19,13 @@ class aiServices {
                 messages: [
                     {   role: "system", content: prompt },
                     ...messages,
-                    ],
-                    });
+                ],
+            });
                     
-                    const answer = completion.choices[0].message?.content || "No response";
-                    return answer;
-        } catch (err){
-            console.error("rror al conectar con OpenAI:", err);
+            const answer = completion.choices[0].message?.content || "No response";
+            return answer;
+        } catch (err) {
+            console.error("Error al conectar con OpenAI:", err);
             return "ERROR";
         }
     }
