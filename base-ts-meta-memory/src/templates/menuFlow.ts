@@ -41,4 +41,5 @@ const menuFlow = addKeyword('EVENTS.ACTION')
             }
             await provider.sendList('${ctx.from}@s.whatsapp.net', list)
         })
+        
 export { menuFlow };
