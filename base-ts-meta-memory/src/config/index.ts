@@ -9,5 +9,9 @@ export const config = {
     version: "v20.0",
     //OpenAI
     Model: process.env.Model,
-    ApiKey: process.env.ApiKey
+    ApiKey: process.env.ApiKey,
+    //sheets
+    spreadsheetId: process.env.spreadsheetId,
+    privateKey: process.env.privateKey,
+    clientEmail: process.env.clientEmail
 };
