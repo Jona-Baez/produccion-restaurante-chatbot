@@ -16,7 +16,7 @@ class SheetManager {
         });
 
         this.sheets = google.sheets({version: "v4", auth });
-        this.spreadsheetId = this.spreadsheetId;
+        this.spreadsheetId = spreadsheetId;
     }
 
     //Funcion para verificar si un usuario existe
