@@ -1,23 +1,19 @@
-# Image size ~ 400MB
+# Build stage
 FROM node:21-alpine3.18 as builder
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
-ENV PNPM_HOME=/usr/local/bin
+# Copiar archivos de dependencias e instalar paquetes
+COPY package*.json ./
+RUN npm install
 
+# Copiar todo el código fuente
 COPY . .
 
-COPY package*.json *-lock.yaml ./
+# Compilar la aplicación (sin --mount=type=cache)
+RUN npm run build
 
-RUN apk add --no-cache --virtual .gyp \
-        python3 \
-        make \
-        g++ \
-    && apk add --no-cache git \
-    && pnpm install && pnpm run build \
-    && apk del .gyp
-
+# Deployment stage
 FROM node:21-alpine3.18 as deploy
 
 WORKDIR /app
@@ -26,15 +22,13 @@ ARG PORT
 ENV PORT $PORT
 EXPOSE $PORT
 
+# Copiar archivos necesarios desde el builder
 COPY --from=builder /app/assets ./assets
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/*.json /app/*-lock.yaml ./
- 
-RUN corepack enable && corepack prepare pnpm@latest --activate 
-ENV PNPM_HOME=/usr/local/bin
+COPY --from=builder /app/package*.json ./
 
-RUN npm cache clean --force && pnpm install --production --ignore-scripts \
-    && addgroup -g 1001 -S nodejs && adduser -S -u 1001 nodejs \
-    && rm -rf $PNPM_HOME/.npm $PNPM_HOME/.node-gyp
+# Instalar solo dependencias de producción
+RUN npm install --omit=dev
 
+# Iniciar la aplicación con npm
 CMD ["npm", "start"]
