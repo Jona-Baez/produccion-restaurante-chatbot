@@ -2,15 +2,15 @@ FROM node:21-alpine3.18 as builder
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare npm@latest --activate
 ENV PNPM_HOME=/usr/local/bin
 
 COPY package*.json *-lock.yaml ./
-RUN pnpm install
+RUN npm install
 
 COPY . .
 
-COPY pnpm run build
+COPY npm run build
 
 FROM node:21-alpine3.18 as deploy
 
@@ -27,6 +27,6 @@ COPY --from=builder /app/*.json /app/*-lock.yaml ./
 RUN corepack enable && corepack prepare pnpm@latest --activate 
 ENV PNPM_HOME=/usr/local/bin
 
-RUN pnpm install --production --ignore-scripts
+RUN npm install --production --ignore-scripts
 
 CMD ["npm", "start"]
