@@ -1,17 +1,19 @@
+# Build stage
 FROM node:21-alpine3.18 as builder
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare npm@latest --activate
-ENV PNPM_HOME=/usr/local/bin
-
-COPY package*.json *-lock.yaml ./
+# Copiar archivos de dependencias e instalar paquetes
+COPY package*.json ./
 RUN npm install
 
+# Copiar todo el código fuente
 COPY . .
 
-COPY npm run build
+# Compilar la aplicación
+RUN npm run build
 
+# Deployment stage
 FROM node:21-alpine3.18 as deploy
 
 WORKDIR /app
@@ -20,13 +22,13 @@ ARG PORT
 ENV PORT $PORT
 EXPOSE $PORT
 
+# Copiar archivos necesarios desde el builder
 COPY --from=builder /app/assets ./assets
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/*.json /app/*-lock.yaml ./
+COPY --from=builder /app/package*.json ./
 
-RUN corepack enable && corepack prepare pnpm@latest --activate 
-ENV PNPM_HOME=/usr/local/bin
+# Instalar solo dependencias de producción
+RUN npm install --omit=dev
 
-RUN npm install --production --ignore-scripts
-
+# Iniciar la aplicación con npm
 CMD ["npm", "start"]
