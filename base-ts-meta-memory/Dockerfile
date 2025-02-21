@@ -10,7 +10,7 @@ RUN npm install
 # Copiar todo el código fuente
 COPY . .
 
-# Compilar la aplicación
+# Compilar la aplicación (sin --mount=type=cache)
 RUN npm run build
 
 # Deployment stage
