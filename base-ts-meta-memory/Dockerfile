@@ -18,6 +18,8 @@ RUN apk add --no-cache --virtual .gyp \
     && pnpm install && pnpm run build \
     && apk del .gyp
 
+RUN --mount=type=cache,id=s/cd0466a7-37b8-4fde-b623-6f6e6455fde0-node_modules/cache,target=/app/node_modules/.cache npm run build 
+
 FROM node:21-alpine3.18 as deploy
 
 WORKDIR /app
