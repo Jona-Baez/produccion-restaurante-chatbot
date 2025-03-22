@@ -8,7 +8,7 @@ const opcionesFlow = addKeyword('EVENTS.ACTION')
                     "text": ""
                 },
                 "body": {
-                    "text": "✨ Interactúa con nuestro chatbot 🤖🙏 y deja que la fe guíe tu camino.\n\n 📥 Descarga y lleva la devoción a la Virgen de Guadalupe siempre contigo. 💙🌿"//137 caracteres seguros
+                    "text": "¿En qué te puedo ayudar?"//137 caracteres seguros
                 },
                 "footer": {
                     "text": ""
