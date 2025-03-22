@@ -14,7 +14,7 @@ const opcionesFlow = addKeyword('EVENTS.ACTION')
                     "text": ""
                 },
                 "action": {
-                    "button": "Ver las 3 opciones",
+                    "button": "Ver las 10 opciones",
                     "sections": [
                         {
                             "title": "Acciones",//Limitado a 10 acciones
@@ -22,52 +22,52 @@ const opcionesFlow = addKeyword('EVENTS.ACTION')
                                 {
                                     "id": "smartia119401",
                                     "title": "🍽️ Alimentos y bebidas",//Limitado a 26 caracteres
-                                    "description": " *GRATIS* Conocer la historia y milagros de la Virgen de Guadalupe."//Limitado a 70 caracteres
+                                    "description": "Descarga nuestra carta."//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119402",
                                     "title": "📍 Sucursales y horarios",//Limitado a 26 caracteres
-                                    "description": " *GRATIS* Aprender cómo rezar el Santo Rosario Guadalupano."//Limitado a 70 caracteres
+                                    "description": "Conoce las diferentes ubicaciones."//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119403",
                                     "title": "📅 Reservaciones",//Limitado a 26 caracteres
-                                    "description": "*45 PESOS* Ebook de plegarias milagrosas para todo el mes."//Limitado a 70 caracteres
+                                    "description": "Reserva tu mesa fácilmente."//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119404",
                                     "title": "🎉 Paquetes y eventos",//Limitado a 26 caracteres
-                                    "description": "4. Pedir oraciones y encender una vela virtual."//Limitado a 70 caracteres
+                                    "description": "Conoce nuestros paquetes especiales"//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119405",
                                     "title": "🎟️ Promociones y cupones",//Limitado a 26 caracteres
-                                    "description": "5. Descargar materiales como oraciones y guías devocionales."//Limitado a 70 caracteres
+                                    "description": "Aprovecha nuestras ofertas exclusivas"//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119406",
                                     "title": "📝 Quejas y sugerencias",//Limitado a 26 caracteres
-                                    "description": "6. Descarga nuestra cartaDescarga nuestra cartaDescarga nuestra carta."//Limitado a 70 caracteres
+                                    "description": "Tu opinión nos ayuda a mejorar"//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119407",
                                     "title": "📋 Contratación",//Limitado a 26 caracteres
-                                    "description": "7. Descarga nuestra cartaDescarga nuestra cartaDescarga nuestra carta."//Limitado a 70 caracteres
+                                    "description": "Únete a nuestro equipo"//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119408",
                                     "title": "💳 Facturación",//Limitado a 26 caracteres
-                                    "description": "8. Descarga nuestra cartaDescarga nuestra cartaDescarga nuestra carta."//Limitado a 70 caracteres
+                                    "description": "Solicita tu factura aquí"//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119409",
                                     "title": "🎵 Audio",//Limitado a 26 caracteres
-                                    "description": "9. Descarga nuestra cartaDescarga nuestra cartaDescarga nuestra carta."//Limitado a 70 caracteres
+                                    "description": "Puedes escuchar un audio"//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119410",
                                     "title": "🎥 Imagen",//Limitado a 26 caracteres
-                                    "description": "10. Descarga nuestra cartaDescarga nuestra cartaDescarga nuestra carta"//Limitado a 70 caracteres
+                                    "description": "Tambien recibe una imagen"//Limitado a 70 caracteres
                                 }
                             ]
                         }
