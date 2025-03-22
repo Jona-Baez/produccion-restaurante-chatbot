@@ -21,27 +21,27 @@ const opcionesFlow = addKeyword('EVENTS.ACTION')
                             "rows": [
                                 {
                                     "id": "smartia119401",
-                                    "title": "📜 Historia y milagros",//Limitado a 26 caracteres
+                                    "title": "🍽️ Alimentos y bebidas",//Limitado a 26 caracteres
                                     "description": " *GRATIS* Conocer la historia y milagros de la Virgen de Guadalupe."//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119402",
-                                    "title": "📿 Santo Rosario",//Limitado a 26 caracteres
+                                    "title": "📍 Sucursales y horarios",//Limitado a 26 caracteres
                                     "description": " *GRATIS* Aprender cómo rezar el Santo Rosario Guadalupano."//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119403",
-                                    "title": "📖 Una oración diaria",//Limitado a 26 caracteres
+                                    "title": "📅 Reservaciones",//Limitado a 26 caracteres
                                     "description": "*45 PESOS* Ebook de plegarias milagrosas para todo el mes."//Limitado a 70 caracteres
-                                }/*,
+                                },
                                 {
                                     "id": "smartia119404",
-                                    "title": "🎉 Padir oraciones",//Limitado a 26 caracteres
+                                    "title": "🎉 Paquetes y eventos",//Limitado a 26 caracteres
                                     "description": "4. Pedir oraciones y encender una vela virtual."//Limitado a 70 caracteres
                                 },
                                 {
                                     "id": "smartia119405",
-                                    "title": "🎟️ Guías devocionales",//Limitado a 26 caracteres
+                                    "title": "🎟️ Promociones y cupones",//Limitado a 26 caracteres
                                     "description": "5. Descargar materiales como oraciones y guías devocionales."//Limitado a 70 caracteres
                                 },
                                 {
@@ -69,7 +69,6 @@ const opcionesFlow = addKeyword('EVENTS.ACTION')
                                     "title": "🎥 Imagen",//Limitado a 26 caracteres
                                     "description": "10. Descarga nuestra cartaDescarga nuestra cartaDescarga nuestra carta"//Limitado a 70 caracteres
                                 }
-                                */
                             ]
                         }
                     ]
