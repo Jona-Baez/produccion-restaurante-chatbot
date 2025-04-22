@@ -21,7 +21,7 @@ export const faqFlow = addKeyword(EVENTS.ACTION)
                 return endFlow(response);
             } catch (error){
                 console.log("Error en la llamada GPT", error);
-                return endFlow("Por favor, intenta de nuevo");
+                return endFlow("Por favor, intenta de nuevo :(");
             }
         }
     );
