@@ -12,10 +12,12 @@ import { sieteFlow } from "./list_templates/sieteFlow";//7
 import { ochoFlow } from "./list_templates/ochoFlow";//8
 import { nueveFlow } from "./list_templates/nueveFlow";//9
 import { diezFlow } from "./list_templates/diezFlow";//10
+import { faqFlow } from "./faqFlow";
 
 export default createFlow ([
     mainFlow,
-    opcionesFlow,    
+    opcionesFlow,
+    faqFlow,    
     unoFlow,//1
     dosFlow,//2
     tresFlow,//3

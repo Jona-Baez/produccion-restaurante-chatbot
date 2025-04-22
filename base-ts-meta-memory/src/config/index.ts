@@ -7,4 +7,7 @@ export const config = {
     numberId: process.env.numberId,
     verifyToken: process.env.verifyToken,
     version: "v20.0",
+    //AI
+    Model: process.env.Model,
+    ApiKey: process.env.ApiKey
 };

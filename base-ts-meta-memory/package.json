@@ -15,7 +15,8 @@
     "@builderbot/bot": "1.2.5",
     "@builderbot/provider-meta": "1.2.5",
     "dot-env": "^0.0.1",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "openai": "^4.95.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
