@@ -15,7 +15,7 @@ class aiServices {
     async chat (prompt: string, messages: any[]): Promise<string> {
         try {
             const completion = await this.openAI.chat.completions.create({
-                model: config.Model,
+                model: config.model,
                 messages:[
                     { role: "system", content: prompt },
                     ...messages,

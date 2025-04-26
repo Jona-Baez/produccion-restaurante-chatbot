@@ -8,6 +8,6 @@ export const config = {
     verifyToken: process.env.verifyToken,
     version: "v20.0",
     //AI
-    Model: process.env.Model,
-    ApiKey: process.env.OPENAI_API_KEY
+    model: process.env.model,
+    apiKey: process.env.OPENAI_API_KEY
 };

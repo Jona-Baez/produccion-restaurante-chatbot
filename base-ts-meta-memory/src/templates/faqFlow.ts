@@ -16,7 +16,7 @@ export const faqFlow = addKeyword(EVENTS.ACTION)
     .addAction(
         async (ctx, { state, endFlow, gotoFlow}) => {
             try {
-                const AI = new aiServices(config.ApiKey);
+                const AI = new aiServices(config.apiKey);
                 const response = await AI.chat(prompt, [{ role: "user", content: ctx.body }])
                 return endFlow(response);
             } catch (error){
