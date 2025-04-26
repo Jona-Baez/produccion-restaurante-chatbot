@@ -9,5 +9,5 @@ export const config = {
     version: "v20.0",
     //AI
     Model: process.env.Model,
-    ApiKey: process.env.ApiKey
+    apiKey: process.env.OPENAI_API_KEY
 };
