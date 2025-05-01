@@ -16,6 +16,8 @@
     "@builderbot/provider-meta": "1.2.5",
     "dot-env": "^0.0.1",
     "dotenv": "^16.5.0",
+    "gaxios": "^6.7.1",
+    "googleapis": "^148.0.0",
     "openai": "^4.96.0"
   },
   "devDependencies": {
