@@ -17,7 +17,7 @@ import { faqFlow } from "./faqFlow";
 export default createFlow ([
     mainFlow,
     opcionesFlow,
-    faqFlow,    
+    faqFlow,   
     unoFlow,//1
     dosFlow,//2
     tresFlow,//3

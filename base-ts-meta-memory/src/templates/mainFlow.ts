@@ -3,9 +3,8 @@ import { faqFlow } from "./faqFlow";
 import { writeToSheet, readSheet } from "./../services/sheets"
 
 const mainFlow = addKeyword([EVENTS.WELCOME])
-    .addAnswer("Agregando a Sheets tu mensaje...", 
-    null,
-     async (ctx, ctxFn) => {
+    .addAnswer("Agregando a Sheets tu mensaje...")
+    .addAction(async (ctx, ctxFn) =>{
       await writeToSheet([["Mensaje", "Usuario", ctx.body]], "Sheet1!A1:J10");
       const response = await readSheet();
       console.log(response);
