@@ -37,7 +37,7 @@ async function writeToSheet(values: any[][], range: string): Promise<GaxiosRespo
   // Función asíncrona para leer datos de una hoja de cálculo de Google.
 async function readSheet(): Promise<any[][] | void> {
     const sheets = google.sheets({ version: 'v4', auth });
-    const range = 'Restaurant!A1:J35'; // Nombre de la sheet
+    const range = 'Sheet!A1:J35'; // Nombre de la sheet
   
     try {
       const response = await sheets.spreadsheets.values.get({
