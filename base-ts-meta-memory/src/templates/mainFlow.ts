@@ -2,15 +2,16 @@ import { addKeyword, EVENTS } from "@builderbot/bot"
 import { faqFlow } from "./faqFlow";
 import { writeToSheet, readSheet } from "./../services/sheets"
 
-const welcomeFlow = addKeyword([EVENTS.WELCOME])
-  .addAnswer("Agregando a Sheets tu mensaje...", 
+const mainFlow = addKeyword([EVENTS.WELCOME])
+    .addAnswer("Agregando a Sheets tu mensaje...", 
     null,
-    async (ctx, ctxFn) => {
+     async (ctx, ctxFn) => {
       await writeToSheet([["Mensaje", "Usuario", ctx.body]], "Sheet1!A1:J10");
       const response = await readSheet();
       console.log(response);
-    }
-  );
+    })
+    
+export { mainFlow };
 
   /*const mainFlow = addKeyword([EVENTS.WELCOME])
     .addAction( async (ctx, ctxFn) =>{
