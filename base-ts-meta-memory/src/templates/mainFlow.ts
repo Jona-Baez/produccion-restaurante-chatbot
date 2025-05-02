@@ -1,16 +1,17 @@
-import { addKeyword, EVENTS } from "@builderbot/bot"
+import { addKeyword, EVENTS } from "@builderbot/bot";
 import { faqFlow } from "./faqFlow";
-import { writeToSheet, readSheet } from "./../services/sheets"
+import { writeToSheet, readSheet } from "./../services/sheets";
 
 const mainFlow = addKeyword([EVENTS.WELCOME])
-    .addAnswer("Agregando a Sheets tu mensaje...")
-    .addAction(async (ctx, ctxFn) =>{
-      await writeToSheet([["Mensaje", "Usuario", ctx.body]], "Restaurant!A1:J10");
-      const response = await readSheet();
-      console.log(response);
-    })
-    
+  .addAnswer("Agregando a Sheets tu mensaje...")
+  .addAction(async (ctx, ctxFn) => {
+    await writeToSheet([["Mensaje", "Usuario", ctx.body]]);
+    const response = await readSheet();
+    console.log(response);
+  });
+
 export { mainFlow };
+
 
   /*const mainFlow = addKeyword([EVENTS.WELCOME])
     .addAction( async (ctx, ctxFn) =>{
