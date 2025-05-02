@@ -5,7 +5,7 @@ import { writeToSheet, readSheet } from "./../services/sheets"
 const mainFlow = addKeyword([EVENTS.WELCOME])
     .addAnswer("Agregando a Sheets tu mensaje...")
     .addAction(async (ctx, ctxFn) =>{
-      await writeToSheet([["Mensaje", "Usuario", ctx.body]], "Sheet!A1:J10");
+      await writeToSheet([["Mensaje", "Usuario", ctx.body]], "Sheet1!A1:J10");
       const response = await readSheet();
       console.log(response);
     })
