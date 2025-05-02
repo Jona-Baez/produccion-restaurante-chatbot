@@ -1,9 +1,10 @@
 import { addKeyword, EVENTS } from "@builderbot/bot";
 import { faqFlow } from "./faqFlow";
 import { writeToSheet, readSheet } from "./../services/sheets";
+import { getParsedData, dateAvailable, addReservation } from "~/services/utils";
 
 const mainFlow = addKeyword([EVENTS.WELCOME])
-  .addAnswer("Agregando a Sheets tu mensaje...")
+  .addAnswer("Prueba de parse data...")
   .addAction(async (ctx, ctxFn) => {
     await writeToSheet([["Mensaje", "Usuario", ctx.body]]);
     const response = await readSheet();
@@ -13,7 +14,26 @@ const mainFlow = addKeyword([EVENTS.WELCOME])
 export { mainFlow };
 
 
-  /*const mainFlow = addKeyword([EVENTS.WELCOME])
+
+/*
+AGREGAR INFO EN SHEET ORIGINAL
+import { addKeyword, EVENTS } from "@builderbot/bot"
+import { faqFlow } from "./faqFlow";
+import { writeToSheet, readSheet } from "./../services/sheets"
+
+const mainFlow = addKeyword([EVENTS.WELCOME])
+    .addAnswer("Agregando a Sheets tu mensaje...")
+    .addAction(async (ctx, ctxFn) =>{
+      await writeToSheet([["Mensaje", "Usuario", ctx.body]], "Restaurant!A1:J10");
+      const response = await readSheet();
+      console.log(response);
+    })
+    
+export { mainFlow };*/
+
+/*
+CHAT CON IA
+const mainFlow = addKeyword([EVENTS.WELCOME])
     .addAction( async (ctx, ctxFn) =>{
         return ctxFn.gotoFlow(faqFlow)
      })
@@ -22,6 +42,7 @@ export { mainFlow };
 */
 
 /*
+LISTADO CON RESPUESTAS PREDEFINIDAS
 import { addKeyword, EVENTS } from "@builderbot/bot"
 import { opcionesFlow } from "./opcionesFlow";
 

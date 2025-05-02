@@ -25,19 +25,22 @@ async function getFirstSheetName(): Promise<string | undefined> {
 }
 
 // ✅ Escribir datos en la hoja
-async function writeToSheet(values: any[][]): Promise<GaxiosResponse<sheets_v4.Schema$UpdateValuesResponse> | void> {
+async function writeToSheet(
+  values: any[][],
+  range?: string // 👈 el rango ahora es opcional
+): Promise<GaxiosResponse<sheets_v4.Schema$UpdateValuesResponse> | void> {
   const sheets = google.sheets({ version: 'v4', auth });
   const sheetName = await getFirstSheetName();
   if (!sheetName) return;
 
-  const range = `'${sheetName}'!A1:J10`;
+  const finalRange = range || `'${sheetName}'!A1:J10`; // usa el rango proporcionado o uno por defecto
   const resource = { values };
   const valueInputOption = 'USER_ENTERED';
 
   try {
     const res = await sheets.spreadsheets.values.update({
       spreadsheetId,
-      range,
+      range: finalRange,
       valueInputOption,
       requestBody: resource
     });
@@ -47,6 +50,7 @@ async function writeToSheet(values: any[][]): Promise<GaxiosResponse<sheets_v4.S
     console.error('❌ Error al escribir en Sheets:', error);
   }
 }
+
 
 // ✅ Leer datos desde la hoja
 async function readSheet(): Promise<any[][] | void> {
