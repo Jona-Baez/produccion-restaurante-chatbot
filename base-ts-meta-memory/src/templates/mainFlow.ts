@@ -8,7 +8,7 @@ const mainFlow = addKeyword([EVENTS.WELCOME])
   .addAction(async (ctx, ctxFn) => {
       const date = "2024-06-30T12:00:00:000Z"
       const dateD = new Date(date)
-      const response = dateAvailable(dateD)
+      const response = await dateAvailable(dateD)
       console.log
   });
 
