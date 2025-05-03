@@ -6,7 +6,7 @@ import { dateAvailable, addReservation } from "~/services/utils";
 const mainFlow = addKeyword([EVENTS.WELCOME])
   .addAnswer("Prueba de dateAvalaible")
   .addAction(async (ctx, ctxFn) => {
-      const date = "2024-06-30T12:00:00:000Z"
+      const date = "2025-05-09T12:00:00:000Z"
       const dateD = new Date(date)
       const response = await dateAvailable(dateD)
       console.log
