@@ -1,13 +1,15 @@
 import { addKeyword, EVENTS } from "@builderbot/bot";
 import { faqFlow } from "./faqFlow";
 import { writeToSheet, readSheet } from "./../services/sheets";
-import { getParsedData, dateAvailable, addReservation } from "~/services/utils";
+import { dateAvailable, addReservation } from "~/services/utils";
 
 const mainFlow = addKeyword([EVENTS.WELCOME])
-  .addAnswer("Prueba de parse data...")
+  .addAnswer("Prueba de dateAvalaible")
   .addAction(async (ctx, ctxFn) => {
-    const slots = await getParsedData();
-    console.log(slots);
+      const date = "2024-06-30T12:00:00:000Z"
+      const dateD = new Date(date)
+      const response = dateAvailable(dateD)
+      console.log
   });
 
 export { mainFlow };

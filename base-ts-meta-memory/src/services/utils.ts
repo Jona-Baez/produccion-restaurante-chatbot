@@ -120,5 +120,5 @@ async function addReservation(date: Date, name: string): Promise<boolean> {
 }
 
 
-export { getParsedData, dateAvailable, addReservation }
+export { dateAvailable, addReservation }
   
