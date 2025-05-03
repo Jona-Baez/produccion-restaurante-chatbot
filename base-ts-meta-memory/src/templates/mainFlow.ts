@@ -6,9 +6,8 @@ import { getParsedData, dateAvailable, addReservation } from "~/services/utils";
 const mainFlow = addKeyword([EVENTS.WELCOME])
   .addAnswer("Prueba de parse data...")
   .addAction(async (ctx, ctxFn) => {
-    await writeToSheet([["Mensaje", "Usuario", ctx.body]]);
-    const response = await readSheet();
-    console.log(response);
+    const slots = await getParsedData();
+    console.log(slots);
   });
 
 export { mainFlow };

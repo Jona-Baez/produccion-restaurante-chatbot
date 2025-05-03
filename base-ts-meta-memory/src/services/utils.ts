@@ -75,7 +75,9 @@ async function dateAvailable(startDate: Date): Promise<boolean> {
       return false; // Manejar el error y retornar false indicando que hubo un problema
     }
 }
-  
+ 
+
+
 // Función para agregar una reserva a la siguiente mesa disponible en una fecha y hora específicas
 async function addReservation(date: Date, name: string): Promise<boolean> {
     try {
@@ -94,7 +96,6 @@ async function addReservation(date: Date, name: string): Promise<boolean> {
         for (const table in slot.mesas) {
           if (slot.mesas[table] === null) {
             slot.mesas[table] = name;
-  
             // Actualizar la propiedad 'completo' si todas las mesas están ocupadas
             slot.completo = Object.values(slot.mesas).every(m => m !== null);
   
@@ -110,13 +111,14 @@ async function addReservation(date: Date, name: string): Promise<boolean> {
           }
         }
       }
-  
+   
       return false; // Indicar que no se encontró un slot disponible o no había mesas libres
     } catch (error) {
       console.error('Error en addReservation:', error);
       return false; // Manejar el error y retornar false indicando que hubo un problema
     }
 }
+
 
 export { getParsedData, dateAvailable, addReservation }
   
