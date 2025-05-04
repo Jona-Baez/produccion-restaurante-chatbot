@@ -14,7 +14,7 @@ async function getParsedData(): Promise<Slot[]> {
     if (!data) {
       throw new Error('No se pudieron leer los datos de Google Sheets.');
         }
-  
+
     // Encuentra la fila de encabezado dinámicamente
     const headerRow = data.find(row => row.includes('Día'));
     if (!headerRow) {
@@ -24,7 +24,7 @@ async function getParsedData(): Promise<Slot[]> {
     const headerIndex = data.indexOf(headerRow);
     const headers = headerRow.slice(1); // Ignora el primer elemento vacío
 
-   // Extrae los datos a partir de la fila de encabezado
+    // Extrae los datos a partir de la fila de encabezado
     const rows = data.slice(headerIndex + 1);
 
     return rows.map(row => {
@@ -121,4 +121,3 @@ async function addReservation(date: Date, name: string): Promise<boolean> {
 
 
 export { dateAvailable, addReservation }
-  

@@ -1,16 +1,29 @@
 import { addKeyword, EVENTS } from "@builderbot/bot";
 import { faqFlow } from "./faqFlow";
-import { writeToSheet, readSheet } from "./../services/sheets";
-import { dateAvailable, addReservation } from "~/services/utils";
+import { reservationFlow } from "./reservationFlow";
+import { welcomeFlow } from "./welcomeFlow";
 
 const mainFlow = addKeyword([EVENTS.WELCOME])
-  .addAnswer("Prueba de dateAvalaible")
-  .addAction(async (ctx, ctxFn) => {
-      const date = "2025-05-09T12:00:00:000Z"
-      const dateD = new Date(date)
-      const response = await dateAvailable(dateD)
-      console.log
-  });
+.addAction(async (ctx, ctxFn) => {
+    const bodyText: string = ctx.body.toLowerCase();
+
+    // Primero, el usuario está saludando?
+    const keywords: string[] = ["hola", "buenas", "ola"];
+    const containsKeyword: boolean = keywords.some(keyword => bodyText.includes(keyword));
+    if (containsKeyword) {
+      return await ctxFn.gotoFlow(welcomeFlow); // Sí, está saludando
+    }
+
+    // Segundo, el usuario quiere reservar una mesa?
+    const keywordsRes: string[] = ["reservar", "mesa", "reserva"];
+    const containsKeywordRes: boolean = keywordsRes.some(keyword => bodyText.includes(keyword));
+    if (containsKeywordRes) {
+      return ctxFn.gotoFlow(reservationFlow); // Sí, quiere reservar
+    } else {
+      return ctxFn.flowDynamic("No te entiendo"); // No, preguntó algo directamente
+    }
+})
+
 
 export { mainFlow };
 
