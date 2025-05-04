@@ -3,7 +3,7 @@ import { faqFlow } from "./faqFlow";
 import { reservationFlow } from "./reservationFlow";
 import { welcomeFlow } from "./welcomeFlow";
 
-const mainFlow = addKeyword([EVENTS.ACTION])
+const mainFlow = addKeyword([EVENTS.WELCOME, EVENTS.ACTION])
 .addAction(async (ctx, ctxFn) => {
     const bodyText: string = ctx.body.toLowerCase();
 
