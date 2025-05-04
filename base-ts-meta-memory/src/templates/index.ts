@@ -13,11 +13,15 @@ import { ochoFlow } from "./list_templates/ochoFlow";//8
 import { nueveFlow } from "./list_templates/nueveFlow";//9
 import { diezFlow } from "./list_templates/diezFlow";//10
 import { faqFlow } from "./faqFlow";
+import { reservationFlow } from "./reservationFlow";
+import { welcomeFlow } from "./welcomeFlow";
 
 export default createFlow ([
     mainFlow,
     opcionesFlow,
     faqFlow,   
+    reservationFlow,
+    welcomeFlow,
     unoFlow,//1
     dosFlow,//2
     tresFlow,//3
@@ -28,4 +32,5 @@ export default createFlow ([
     ochoFlow,//8
     nueveFlow,//9
     diezFlow//10
+    
 ]);
